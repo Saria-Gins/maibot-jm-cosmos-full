@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "id": "github.saria-gins.maibot-jm-cosmos-full",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "name": "JM-Cosmos Full",
   "description": "JM 漫画下载：搜索、榜单、推荐、下载单行本并打包 PDF 发送。不提交插件中心，仅自用。移植自 GEMILUXVII 的 astrbot_plugin_jm_cosmos。",
   "author": {
