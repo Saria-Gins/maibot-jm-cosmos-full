@@ -18,15 +18,7 @@ from PIL import Image
 
 from maibot_sdk import Command, Field, MaiBotPlugin, PluginConfigBase, Tool
 
-_ILLEGAL = re.compile(r'[\\/:*?"<>|\r\n\t]+')
 _IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".gif"}
-
-
-def _safe_name(name: str, fallback: str = "album") -> str:
-    """把专辑名清洗成可用作文件名的字符串。"""
-
-    cleaned = _ILLEGAL.sub("_", name or "").strip(" ._")
-    return (cleaned or fallback)[:80]
 
 
 def _is_within(child: Path, parent: Path) -> bool:
@@ -391,7 +383,8 @@ class JMCosmosPlugin(MaiBotPlugin):
                 return True, "", 1
             await self.ctx.send.text(f"图片下载完成（{len(images)} 张），正在打包 PDF…", stream_id)
 
-            pdf_path = self._base_dir() / "pdf" / f"{album_id}-{_safe_name(name)}.pdf"
+            # 上传文件名只用编号，避免把本子原名暴露在会话里
+            pdf_path = self._base_dir() / "pdf" / f"{album_id}.pdf"
             try:
                 written, failed = await asyncio.to_thread(self._images_to_pdf, images, pdf_path)
             except Exception as exc:  # noqa: BLE001
