@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
   "id": "github.saria-gins.maibot-jm-cosmos-full",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "name": "JM-Cosmos Full",
   "description": "JM 漫画下载：搜索、榜单、推荐、下载单行本并打包 PDF 发送。不提交插件中心，仅自用。移植自 GEMILUXVII 的 astrbot_plugin_jm_cosmos。",
   "author": {
     "name": "Saria-Gins",
     "url": "https://github.com/Saria-Gins"
   },
-  "license": "GPL-v3.0-or-later",
+  "license": "AGPL-3.0-or-later",
   "urls": {
     "repository": "https://github.com/Saria-Gins/maibot-jm-cosmos-full",
     "homepage": "https://github.com/Saria-Gins/maibot-jm-cosmos-full",
@@ -25,8 +25,16 @@
     "max_version": "2.17.99"
   },
   "dependencies": [
-    { "type": "python_package", "name": "jmcomic", "version_spec": ">=2.6.10,<3" },
-    { "type": "python_package", "name": "pymupdf", "version_spec": ">=1.23.0,<2" }
+    {
+      "type": "python_package",
+      "name": "jmcomic",
+      "version_spec": ">=2.6.10,<3"
+    },
+    {
+      "type": "python_package",
+      "name": "pymupdf",
+      "version_spec": ">=1.23.0,<2"
+    }
   ],
   "capabilities": [
     "send.text",
@@ -35,6 +43,8 @@
   "plugin_type": "tool",
   "i18n": {
     "default_locale": "zh-CN",
-    "supported_locales": ["zh-CN"]
+    "supported_locales": [
+      "zh-CN"
+    ]
   }
 }
