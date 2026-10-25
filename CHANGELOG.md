@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.9
+
+- 修复 1.1.8 中 `plugin.py` 被误写为空文件导致插件无法加载的问题
+- 许可证统一为 AGPL-3.0-or-later（原项目即 AGPL-3.0）
+- 移除 `@Tool` 上无效的 `activation_type` 参数与 `ActivationType` 导入
+- Command 返回值第三项改为明确权重 `1`
+- 新增用户 ID 兜底（`message.message_info.user_info.user_id`）
+- `plugin.enabled` 现在真实生效
+
 ## 1.1.7
 
 - 超过体积上限的 PDF 也照常发送，发送后（不区分成败）一律删除本地文件
